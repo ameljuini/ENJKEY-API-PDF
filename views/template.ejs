@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    @font-face{
+font-family:"proxima-nova-semi";
+src:url("https://www.mrandmrssmith.com/bundles/familysystem/fonts/proximanova-semibold-webfont.woff") format("woff")
+}
+
+@font-face{
+font-family:"proxima-nova-light";
+src:url("https://www.mrandmrssmith.com/bundles/familysystem/fonts/proximanova-light-webfont.woff") format("woff")
+}
+
+button{cursor:pointer}
+
+.room-ad {
+	height: 468px;
+  display: block;
+  text-decoration: none;
+  background: #242E36;
+  max-width:932px;
+}
+.side {
+	width: 50%;
+    float: right;
+}
+
+.left-side {
+    background-image: url('https://larrogantefr.files.wordpress.com/2018/04/couvent-de-pozzo-enjkey-weekend.jpg?w=1200'); 
+    background-repeat: no-repeat;
+    background-position: 5100% 10%;
+    height: 468px;
+    background-size: cover; 
+}
+
+.left-side img {
+	height: 100%;
+  width: 100%;
+}
+
+.right-side img {
+    position: relative;
+    left: 50%;
+    height:60px;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.right-side {
+	background: #344053;
+    height: 100%;
+    padding: 100px 25px 0px 25px ;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.right-side h5 {
+	  text-transform: uppercase;
+    margin-bottom: 5px;
+  /*COPIED FROM ZEPLIN*/
+  font-family: "proxima-nova-semi";
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 1.42;
+  letter-spacing: 2.1px;
+  text-align: center;
+  color: #ffffff;
+
+}
+
+.right-side h2 {
+  margin: 2px 0;
+  /*COPIED FROM ZEPLIN*/
+  font-family: "proxima-nova-light";
+  font-size: 28px;
+  font-weight: 100;
+  line-height: 1.14;
+  letter-spacing: -0.4px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.right-side button {
+    font-family: "proxima-nova-semi";
+    border-radius: 3px;
+    border: solid 1px #ffffff;
+    display: block;
+    background: #344053;
+    padding: 12px 26px 12px 26px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 100;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+margin-top:40px;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@media (max-width: 767px) { 
+.room-ad {
+  height: auto;
+}
+
+.right-side img {
+height:40px;
+}
+  
+.right-side h5 {
+    margin: 10px 0px 0px 0px;
+    font-size: 12px;
+  font-weight: 100;
+  line-height: 1.42;
+  letter-spacing: 2.1px;
+  text-align: center;
+  color: #ffffff;
+}
+  
+.right-side h2 {  
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.28;
+  letter-spacing: -0.4px;
+  text-align: center;
+  color: #ffffff;
+}
+  
+.side {
+  width: 100%;
+  float: none;
+}
+
+.right-side {
+	background: #344053;
+  height: 240px;
+  padding: 10px 30px 10px 30px ;
+}
+  
+
+}
+
+@media (max-width: 400px) { 
+.room-ad {
+  min-width:300px;
+}
+ 
+.left-side {
+    height: 240px;
+}
+
+.right-side {
+	background: #344053;
+  height: 227px;
+  padding: 10px 10px 10px 10px ;
+}
+  
+  .right-side img {
+width:80px;
+}
+
+.right-side h5 {
+  font-size: 12px;
+  line-height: 1.42;
+  letter-spacing: 2.1px;
+  text-align: center;
+  color: #ffffff;
+}
+  
+.right-side h2 {
+  font-size: 22px;
+  line-height: 1.36;
+  letter-spacing: -0.4px;
+  text-align: center;
+  color: #ffffff;
+}
+  
+.right-side button {
+  margin-top:20px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+} 
+}
+  </style>
+
+</head>
+<body>
+ 
+  
+    <div class="side left-side">
+  
+     </div>
+     <% if (clients.length > 0) { %>
+      <% clients.forEach(client => {%>
+     <div class="side right-side">
+       <img src="https://enjkey.com/assets/ej-images/logo-blanc.png"/>
+       <h5><%= client.amount %></h5>
+       <h2><em>EnjKey!</em> <%= client.message %></h2>
+       <h5> a gift from : <%= client.name %></h5>
+       <h5> N°:: <%= client.num %></h5>
+
+         
+     </div>
+ 
+ <%  });%>
+    <% }%>
+</body>
+</html>

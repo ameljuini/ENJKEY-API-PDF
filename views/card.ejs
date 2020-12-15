@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+    <head>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+  background-image: url("Ambre.jpg");
+}
+
+
+
+.mar-t-1 {
+  margin-top: 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gift-card {
+  border-radius: 10px;
+  background: #fafafa;
+  width: 430px;
+  color: #3d3d3d;
+  font-family: sans-serif;
+  display: flex;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gift-card__image {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+ 
+  max-width: 150px;
+  background-size: cover;
+  background-image: url("lauze.jpg");
+}
+
+.gift-card__content {
+  padding: 30px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.gift-card__msg {
+  font-size: 10px;
+  display: block;
+  margin-top: 10px;
+}
+
+.gift-card__details {
+  margin-top: auto;
+  align-items: center;
+  line-height: 1;
+}
+
+.gift-card__code {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 10px 13px;
+  margin-top: 20px;
+  font-size: 20px;
+  border: 1px solid #e3e3e3;
+}
+
+.gift-card__amount {
+  font-size: 70px;
+}
+.gift-card__amount-remaining {
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+</style>
+</head>
+<body>
+
+    <article class="gift-card">
+        <div class="gift-card__image">
+        </div>
+        <% if (clients.length > 0) { %>
+            <% clients.forEach(client => {%>
+        <section class="gift-card__content">
+          <div class="gift-card__amount"><%= client.message %></div>
+          <div class="gift-card__amount-remaining"><%= client.name %></div>
+          <div class="gift-card__code"><%= client.amount %></div>
+          <div class="gift-card__msg"><%=client.email %></div>
+          <%  });%>
+          <% }%>
+        </section>
+      </article>
+      </body>
+</html> 
